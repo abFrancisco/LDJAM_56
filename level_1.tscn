@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvpa860to0iom"]
+
+[ext_resource type="Script" path="res://level_1.gd" id="1_5vk2g"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_5vk2g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.304688, 0.304688, 0.304688, 1)
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Node2D" type="Node2D" parent="SpawnPoints"]
+position = Vector2(61, -44)
+
+[node name="Node2D2" type="Node2D" parent="SpawnPoints"]
+position = Vector2(330, -47)
+
+[node name="Node2D3" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-48, 174)
+
+[node name="Node2D4" type="Node2D" parent="SpawnPoints"]
+position = Vector2(438, 547)
+
+[node name="Node2D5" type="Node2D" parent="SpawnPoints"]
+position = Vector2(560, 256)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

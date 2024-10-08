@@ -14,3 +14,27 @@ eating stuff make you bigger, maybe needed for later parts/or just makes it easi
 
 
 maybe have a hunger meter, need to eat leaves on the way, might just be a chore though...
+
+4 
+circuit building game, named NanoMachines(tiny creatures)
+works kinda like zachtronics games,theres a score at the end and you want to be above a certain threshold
+
+goal is makin a circuit board meeting the level requirements
+requirements can be:
+	space (_x_ grid limiting space for building)
+	cost
+	materials
+	*optional* time to build
+there are 2 types of nano machines
+destructors and constructors, *optional* maybe a welder too??
+
+destructors can dig paths in the copper board
+*optional* they can also destroy a fraction of some parts, for example, 
+	lets say theres a memory chip with 16kbits of storage, 
+	the destroyer can destroy 1/2 of it to keep 8kbits, 
+	this would be like recycling, it would refund half the price/cost of that fraction of the part
+
+
+constructors can construct parts
+
+parts are made up of smaller modules????, mayube this is too hard

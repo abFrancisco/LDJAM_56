@@ -13,3 +13,12 @@ config_version=5
 config/name="LDJAM_56"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=512
+window/size/viewport_height=512
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.88, 0.85844, 0.8184, 1)
