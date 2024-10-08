@@ -1,3 +1,38 @@
-[gd_scene format=3 uid="uid://dpqynums4m3wv"]
+[gd_scene load_steps=8 format=3 uid="uid://dpqynums4m3wv"]
 
-[node name="MainMenu" type="Node2D"]
+[ext_resource type="Script" path="res://color_palette.gd" id="1_vduxo"]
+[ext_resource type="Script" path="res://named_color.gd" id="2_siadd"]
+[ext_resource type="Script" path="res://palette.gd" id="3_e133s"]
+
+[sub_resource type="Resource" id="Resource_ley85"]
+script = ExtResource("2_siadd")
+name = "Red"
+color = Color(0.8, 0.2, 0.2, 1)
+
+[sub_resource type="Resource" id="Resource_k86oj"]
+script = ExtResource("2_siadd")
+name = "Green"
+color = Color(0.2, 0.8, 0.2, 1)
+
+[sub_resource type="Resource" id="Resource_qdivo"]
+script = ExtResource("2_siadd")
+name = "Blue"
+color = Color(0.2, 0.2, 0.8, 1)
+
+[sub_resource type="Resource" id="Resource_fuaxa"]
+script = ExtResource("3_e133s")
+entry = Array[ExtResource("2_siadd")]([SubResource("Resource_ley85"), SubResource("Resource_k86oj"), SubResource("Resource_qdivo")])
+
+[node name="MainMenu" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorPalette" type="Node" parent="."]
+script = ExtResource("1_vduxo")
+palette = SubResource("Resource_fuaxa")

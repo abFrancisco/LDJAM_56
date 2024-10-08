@@ -1,26 +1,28 @@
 extends Node2D
 
-#type 0 = square
-#type 1 = circle
-#type 2 = triangle
-var type:int=0
-var food:int = 1000
-var happiness:int = 1000
-var food_decay:Array[int]=[15, 5, 10]
+var food:int = 10000
+var happiness:int = 10000
 var colors:Array[Color]=[Color("4040ff"), Color("ff4040"), Color("40ff40")]
-var textures = [preload("res://white_square.svg"), preload("res://white_circle.svg"), preload("res://white_triangle.svg")]
-var speed:int = 0
-var speed_mult:Array[int]=[0.5, 2, 1]
+var color:Color = Color.WHITE
+var current_color:Color = color
+var current_scale = 1
 
 func _ready() -> void:
-	randomize()
-	type=randi_range(0,2)
-	%Sprite.texture = textures[randi_range(0, 2)]
-	%Sprite.modulate = colors[randi_range(0,2)]
+	color = colors[randi_range(0,2)]
+	current_color = color
+	%Sprite.modulate = current_color
 
+
+#add color expression, maybe in another module
 func _on_timer_timeout() -> void:
-	food-=1
-	happiness-=1
+	food-=3
+	happiness-=5
+	#change color fade, instead of fadin to white, fade to black, or fade to background color.
+	current_color = Color.from_hsv(color.h, color.s * (happiness/1000.0), color.v)
+	%Sprite.modulate = current_color
+	current_scale = food/1000.0
+	%Sprite.scale = Vector2.ONE * current_scale
+	
 	if food or happiness <= 0:
 		gameover()
 
